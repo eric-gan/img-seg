@@ -12,7 +12,7 @@ rm -rf $MODEL/mask_rcnn_inception_v2_coco_2018_01_28.tar.gz
 
 # download text graph
 wget https://raw.githubusercontent.com/opencv/opencv_extra/master/testdata/dnn/mask_rcnn_inception_v2_coco_2018_01_28.pbtxt \
-    -O $MODEL/frozen_text_graph.pbtxt
+    -O $MODEL/mask_rcnn_inception_v2_coco_2018_01_28/frozen_text_graph.pbtxt
 
 # download labels
 # DATA=$PWD/data
