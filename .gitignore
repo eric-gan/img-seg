@@ -1,0 +1,6 @@
+**/*.jpg
+**/*.png
+**/*.avi
+**/*.tar.gz
+model/*/
+**/*.DS_STORE
