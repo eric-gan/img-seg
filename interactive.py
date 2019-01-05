@@ -5,7 +5,7 @@ import os
 
 @route('/')
 def root():
-    return static_file('index.html', root='.')
+    return static_file('home.html', root='.')
 
 @route('/static/<filename>')
 def server_static(filename):
@@ -38,7 +38,7 @@ def do_upload():
     # delete temporary file
     os.remove(fname)
 
-    return "File successfully saved to '{0}'.".format(output_file)
+    return static_file('end.html', root='.')
 
 def main(args, imgseg_):
     global imgseg
