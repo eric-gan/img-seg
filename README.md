@@ -12,6 +12,13 @@ pip3 install -y -r requirements.txt
 sh download.sh
 ```
 
+## Docker
+To build and run a Docker container:
+```
+docker build -t img-seg .
+docker run -it -v $PWD:/mnt img-seg
+```
+
 ## Inference
 During inference, boxes and masks are drawn on the input image, or on each frame of the input video. If no image or video is specified, a video is generate through the webcam.
 ```
