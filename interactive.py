@@ -10,23 +10,28 @@ def root():
 @route('/upload', method='POST')
 def do_upload():
     upload = request.files.get('upload')
+
+    # save to temporary file so opencv can access it
     fname = os.path.abspath(upload.filename)
+    upload.save(fname, overwrite=True)
+
     name, ext = os.path.splitext(fname)
     if ext in ['.png', '.jpg', '.jpeg']:
         is_image = True
-    elif ext in ['.avi', '.flv']:
+    elif ext in ['.avi']:
         is_image = False
     else:
         raise Exception('Incompatible file type.')
 
-    save_path = name + "_mask_rcnn_out" + ext
+    output_file = name + "_mask_rcnn_out" + ext
 
-    # load graphics
+    # load and edit graphics
     cap = cv.VideoCapture(fname)
-
-    # edit graphics
     global imgseg
-    imgseg.edit_frames(cap, save_path, is_image, False)
+    imgseg.edit_frames(cap, output_file, is_image, False)
+
+    # delete temporary file
+    os.remove(fname)
 
     return "File successfully saved to '{0}'.".format(save_path)
 
