@@ -5,6 +5,7 @@
 **/*.avi
 **/*.flv
 **/*.mp4
+**/*.mov
 **/*.tar.gz
 model/*/
 **/*.DS_STORE

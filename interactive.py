@@ -31,7 +31,10 @@ def do_upload():
     output_file = name + "_mask_rcnn_out" + ext
 
     # load and edit graphics
-    cap = cv.VideoCapture(fname)
+    try:
+        cap = cv.VideoCapture(fname)
+    except:
+        os.remove(fname)
     global imgseg
     imgseg.edit_frames(cap, output_file, is_image, False)
 
