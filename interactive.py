@@ -17,6 +17,8 @@ def do_upload():
 
     # save to temporary file so opencv can access it
     fname = os.path.abspath(upload.filename)
+    name, ext = os.path.splitext(fname)
+    fname = name + '_copy' + ext
     upload.save(fname, overwrite=True)
     del upload
 
