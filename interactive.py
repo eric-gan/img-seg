@@ -1,11 +1,15 @@
-from bottle import route, request, static_file, run
+from bottle import route, request, static_file, run, template
 from imgseg import ImageSegmentation
 import cv2 as cv
 import os
 
 @route('/')
 def root():
-    return static_file('interactive.html', root='.')
+    return static_file('index.html', root='.')
+
+@route('/static/<filename>')
+def server_static(filename):
+    return static_file(filename, root='./static/')
 
 @route('/upload', method='POST')
 def do_upload():
