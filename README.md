@@ -12,10 +12,15 @@ sh download.sh
 ```
 
 ## Docker
-To build and run a Docker container:
+To run inside the container in the Docker hub:
 ```
-docker build -t img-seg .
-docker run -it -v $PWD:/mnt img-seg
+docker pull vliu15/m-rcnn:v1
+docker run -it vliu15/m-rcnn:v1
+```
+To build a local container and mount it to current directory:
+```
+docker build -t m-rcnn .
+docker rn -it -v $PWD:/m-rcnn m-rcnn
 ```
 
 ## Inference
