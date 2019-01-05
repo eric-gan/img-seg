@@ -22,7 +22,6 @@ def do_upload():
     upload.save(fname, overwrite=True)
     del upload
 
-    name, ext = os.path.splitext(fname)
     if ext in ['.png', '.jpg', '.jpeg']:
         is_image = True
     elif ext in ['.avi']:
