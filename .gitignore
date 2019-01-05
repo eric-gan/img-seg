@@ -1,6 +1,10 @@
+**/*__pycache__
+**/*.jpeg
 **/*.jpg
 **/*.png
 **/*.avi
+**/*.flv
+**/*.mp4
 **/*.tar.gz
 model/*/
 **/*.DS_STORE
