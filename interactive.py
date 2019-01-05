@@ -34,7 +34,7 @@ def do_upload():
     # delete temporary file
     os.remove(fname)
 
-    return "File successfully saved to '{0}'.".format(save_path)
+    return "File successfully saved to '{0}'.".format(output_file)
 
 def main(args, imgseg_):
     global imgseg
