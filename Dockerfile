@@ -9,6 +9,6 @@ WORKDIR /
 RUN git clone https://github.com/vliu15/ImgSegmentation
 
 WORKDIR /ImgSegmentation
-RUN pip3 install -y --upgrade pip
-RUN pip3 install -y -r requirements.txt
+RUN pip3 install --upgrade pip
+RUN pip3 install -r requirements.txt
 RUN sh download.sh
